@@ -14,18 +14,22 @@ interest = interest/100
 # use the int() function to convert the input into an integer
 years = int(input("Years: "))
 
-
-# Calculate the total value following the formula.
-# You can use multiple steps and variables if necessary.
-# Note that n = 12
-new_balance = balance*(1+(interest/12))**(12*years)
+def calculate_interest(balance, interest, years):
 
 
-# Calculate the interest earned based on the above value and the initial balance
-interest_earned = new_balance - balance
+    # Calculate the total value following the formula.
+    # You can use multiple steps and variables if necessary.
+    # Note that n = 12
+    new_balance = balance*(1+(interest/12))**(12*years)
+
+
+    # Calculate the interest earned based on the above value and the initial balance
+    interest_earned = new_balance - balance
+    return interest_earned
 
 # Output the interest earned
-output = "Interest earned in "+str(years)+" years: $"+str(interest_earned)
+earned = calculate_interest(balance, interest, years)
+output = "Interest earned in "+str(years)+" years: $"+str(earned)
 print(output)
 
 # Output the total value
